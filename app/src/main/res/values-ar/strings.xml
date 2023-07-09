@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ديسكاونت</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="password">كلمة المرور</string>
+    <string name="age">العمر</string>
+    <string name="address">العنوان</string>
+    <string name="mobile_number">رقم الهاتف</string>
+    <string name="or">او</string>
+    <string name="medicine_category_name">قائمة أقسام الدواء</string>
+    <string name="category_name">اقسام المنتجات</string>
+    <string name="add_Rx">صور الروشتة</string>
+    <string name="find_generic">المثائل</string>
+    <string name="fill_field">يجب ملىء الحقول</string>
+    <string name="fill_all_required">يجب ملىء الحقول</string>
+
+    <string name="dos_reminder">التذكير بالدواء</string>
+    <string name="error_login">رقم الهاتف او كلمة المرور خير صحيحة</string>
+    <string name="not_receving">لم تحصل على الكود بعد ؟</string>
+    <string name="resend_otp">اعادة ارسال</string>
+    <string name="invalid_otp">الرمز غير صحيح</string>
+    <string name="enter_sms_otp">لقد أرسلنا رمز التحقق إلى رسالة SMS على هاتفك المحمول ، يرجى إدخاله أدناه</string>
+    <string name="error" >هنالك خطأ ما</string>
+    <string name="register_now">التسجيل الان</string>
+    <string name="dont_have_account">ليس لديك حساب</string>
+    <!--    <string-array name="navigation_drawer_items_array">-->
+    <!--        <item>الرئيسة</item>-->
+    <!--        <item>تزكيربالدواء</item>-->
+    <!--        <item>Promotions</item>-->
+    <!--        <item>العثور على مثيل</item>-->
+    <!--        <item>الاعدادات</item>-->
+    <!--        <item>المساعدة</item>-->
+    <!--        <item>السياسة والخصوصية</item>-->
+    <!--        <item>الضروط والاحكام</item>-->
+    <!--        <item>تسجيل دخول</item>-->
+
+
+    <!--    </string-array>-->
+    　　　
+
+    <string name="sign_up">تسجيل الان</string>
+    <string name="sign_in">تسجيل دخول</string>
+
+    <string name="have_account">هل لديك حساب</string>
+
+    <string name="title_medicine_name">اقسام الدواء</string>
+    <string name="hint_enter_med_name">ادخل الدواء</string>
+    <string name="medicine_days">ادوية الأيام</string>
+    <string name="title_reminder">تذكير</string>
+    <string name="new_medicine">إضافة دواء</string>
+    <string name="every_day">كل يوم</string>
+    <string name="no_medicine_added">لايوجد دواء مضاف</string>
+    <string name="loading_tasks_error">Error while loading medicineAlarms</string>
+    <string name="successfully_saved_me_message">تم إضافة تنبيه</string>
+    <string name="successfully_deleted_message">تم حذف التنبيه</string>
+    <string name="reminder_message">وقت أخذ الدواء قد حان ...</string>
+    <string name="ignored">IGNORED</string>
+    <string name="taken">أخذ</string>
+    <string name="all">الكل</string>
+    <string name="menu_filter">Filter</string>
+    <string name="all_label">كل الادوية</string>
+    <string name="ignore_label">تجاهل الجرعة</string>
+    <string name="taken_label">تم اخذ الجرعة</string>
+    <string name="no_history">لايوجد سجلات</string>
+    <string name="no_taken_med_history">You have not taken any medicine</string>
+    <string name="no_ignored_history">Well Done</string>
+    <string name="menu_stats">التقرير الشهري</string>
+    <string name="m_categories">الأقسام</string>
+    <string name="manufactures">الشركات</string>
+    <string name="myProduct">منتجاتي</string>
+    <string name="language">تغيير اللغة</string>
+    <string name="arabic">عربي</string>
+    <string name="english">إنجليزي</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="aboutUs">عن ديسكاونت</string>
+    <string name="home">الرئيسة</string>
+    <string name="alarm">تذكير بالدواء</string>
+    <string name="setting">الاعدادات</string>
+    <string name="help">المساعدة </string>
+    <string name="condition">الشروط والاحكام</string>
+    <string name="privacy">السياسة والخصوصية</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="logout" >نسجيل خروج</string>
+    <string name="searches">البحث عن منتج</string>
+    <string name="visitor">دخول كزائر</string>
+    <string name="share">مشاركة</string>
+    <string name="offers">العروض</string>
+    <string name="add_to_cart">إضافة للسلة</string>
+    <string name="sd">ج.س</string>
+    <string name="full_name">الاسم بالكامل</string>
+    <string name="manufacturer">الشركة</string>
+    <string name="dose_from">الشكل الصيدلي</string>
+    <string name="indication_usage">دواعي الاستخدام</string>
+    <string name="side_effect">الأثار الجانبية</string>
+    <string name="dose">الجرعات</string>
+    <string name="active_ingredient">المادة الفعالة</string>
+    <string name="interactions">التفاعلات</string>
+    <string name="buy_now">الشراء الان</string>
+    <string name="more">المزيد</string>
+    <string name="user_profile">الحساب الشخصي</string>
+    <string name="order_now">إطلب الان</string>
+    <string name="drug">الأدوية</string>
+    <string name="product">المنتجات</string>
+    <string name="no">لا</string>
+    <string name="yes">نعم</string>
+    <string name="okey">موافق</string>
+    <string name="soon">قريبا</string>
+    <string name="operation_completed">تم اتمام طلبك</string>
+    <string name="you_will_be_contacted">سيتم يتم التواصل معك</string>
+    <string name="cash_on_delivery">الدفع عند الإستلام</string>
+    <string name="electronic_payment">دفع إلكتروني</string>
+    <string name="payment_method">طريقة الدفع</string>
+    <string name="product_successfully_added">تم إضافة المنتج بنجاح</string>
+    <string name="_1_product_were_added_to_your_cart">تم الإضافة لسة الشراء</string>
+    <string name="to_report_any_suggestions_and_complaints_please_contact_us"> اذا واجهتك اي مشاكل في استخدام التطبيق الرجاء مراسلتنا على البريد الإلكتروني او الاتصال بنا على الخط الساخن :</string>
+    <string name="call_us">إتصل بنا</string>
+    <string name="send_message">إرسال رسالة</string>
+    <string name="version">رقم الإصدار</string>
+    <string name="by_registering_you_agree">بقيامك بالتسجيل فأنت توافق على <a href="http://shayoub.com/discount-term/privacy-and-policy-ar.html">الشروط والأحكام</a></string>
+    <string name="by_clicking_on_this_option_you_agree_to_our_privacy_and_policy">بقيامك بالضغط على الخيار فأنت توافق على <a href="http://shayoub.com/discount-term/privacy-and-policy-ar.html">شروطنا والأحكام</a></string>
+    <string name="agree">الموافقة على شروطنا والأحكام</string>
+    <string name="verify_account">التحقق من الحساب</string>
+    <string name="aboutText">ديسكاونت هو تطبيق جوال يقدم خدمة مجانية ، وهو يسمح لك بشكل أساسي بالعثور على الأدوية ومنتجات الرعاية الصحية في الصيدلية لدينا ، وبنقرات 3 فقط ، يمكنك:</string>
+    <string name="aboutText2">- سجل حسابًا جديدًا باستخدام رقم هاتفك الجوال. \ n- صور او ارفق الوصفة الطبية الخاصة بك أو ابحث داخل قاعدة بيانات ديسكاونت عن منتجات الأدوية المطلوبة. \ n- أرسل الطلب إلى الصيدلية.</string>
+    <string name="sendVia">مرحبًا ، أنا أستخدم تطبيق ديسكاونت لطلب الأدوية عبر الإنترنت. قم بتنزيله هنا:</string>
+    <string name="city">المدينة</string>
+    <string name="street">الشارع</string>
+    <string name="confirm_order">تأكيد الطلب</string>
+    <string name="get_location">الموقع الحالي</string>
+    <string name="get_custom_location">موقع أخر</string>
+    <string name="note">ملاحظة (إختياري)</string>
+    <string name="other_phone_optional">رقم هاتف اخر (إختياري)</string>
+    <string name="try_agin">حاول مرة اخرى</string>
+    <string name="should">يجب عليك تسجيل الدخول لطلب المنتج</string>
+    <string name="should_option">يجب عليك التسجيل للوصول لهذا الخيار</string>
+    <string name="recomed">هل توصي بمثيل</string>
+    <string name="check_location">حدد الموقع على الخريطة</string>
+    <string name="otp_sended">تم ارسال الرمز</string>
+    <string name="the_phone_registred">رقم الهاتف مسجل مسبقا</string>
+    <string name="expires">إنتهاء</string>
+    <string name="state_city_street">الولاية - المدينة - الحي</string>
+    <string name="status">الحالة :</string>
+    <string name="drug_count">عدد الأدوية</string>
+    <string name="order_number">رقم الطلب</string>
+    <string name="product_count">عدد المنتجات</string>
+    <string name="prescriptions_count">عدد الروشتة</string>
+    <string name="errer_phone_message">رقم الهاتف غير صحيح</string>
+    <string name="error_address">يجب ان يحتوي على الأقل 10 حروف</string>
+    <string name="choose_location">يجب عليك اختيار موقعك الحالي او منطقة السكن</string>
+    <string name="no_internet">لايوجد إتصال بالإنترنت</string>
+    <string name="hello">مرحبا بك </string>
+    <string name="cart_empty">سلة الشراء فارغة</string>
+    <string name="alarm_for">تنبية لـ</string>
+    <string name="alarm_for2">بنجاح</string>
+    <string name="add_now">إضافة</string>
+    <string name="choose_day">يجب أختيار اليوم</string>
+    <string name="dose_quantity">عدد الجرعات</string>
+    <string name="enter_medicine_name">إدخل اسم الدواء</string>
+    <string name="choose_two_day">يجب إختيار يومان على الأقل</string>
+    <string name="old_password">كلمة المرور الحالية</string>
+    <string name="new_passward">كلمة المرور الجديدة</string>
+    <string name="re_passward"> أعد كلمة المرور الجديدة</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="forget_password">نسيت كلمة المرور ؟</string>
+    <string name="forget_passwordAc">نسيت كلمة المرور</string>
+    <string name="clicK_next">للحصول على كلمة مرور جديدة ,يرجى إدخال رقم هاتفك لتلقي رمز التحقق</string>
+    <string name="next">التالي</string>
+    <string name="passChange">تم تغيير كلمة المرور بنجاح</string>
+    <string name="wrong">كلمة المرور خاطئة</string>
+    <string name="pass_match">كلمة المرور غير متطابقة</string>
+    <string name="set_pass">إضافة كلمة مرور جديدة</string>
+    <string name="unvalid">رقم الهاتف غير صحيح</string>
+    <string name="please_consult_your_physician_before_putin_tis_medicine">يرجى استشارة طبيبك قبل طلب الدواء</string>
+    <string name="remove_cart">Aهل انت متأكد من إزالة</string>
+    <string name="cart">من سلة الشراء</string>
+</resources>

@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".views.DrugDetailsFragment">
+
+    <data>
+
+        <variable
+            name="cartItem"
+            type="com.example.discaount.data.model.CartItemDrug" />
+
+        <variable
+            name="drugViewModel"
+            type="com.example.discaount.viewmodels.DrugViewModel" />
+
+        <variable
+            name="drugInterface"
+            type="com.example.discaount.adapters.DrugListAdapter.DrugInterface" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeOperation"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end"
+                        android:background="@drawable/round"
+                        android:backgroundTint="@color/colorPrimary">
+
+                        <TextView
+                            android:id="@+id/infoCheaper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:gravity="center"
+                            android:padding="0dp"
+                            android:layout_centerVertical="true"
+                            android:text="@string/find_generic"
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:id="@+id/infoIns"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:textAlignment="center"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center"
+                            android:layout_toEndOf="@id/infoCheaper"
+                            android:background="@drawable/round"
+                            android:backgroundTint="@color/sky"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:text="@{drugViewModel.drug.instanceCount}"
+                            android:textColor="@color/white"
+                            android:textSize="10dp" />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:drugImage="@{drugViewModel.drug.imageUrl}"
+                        android:src="@drawable/icon_blister" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/round2"
+                        android:backgroundTint="#ECEBEB"
+                        android:drawableStart="@drawable/ic_warning"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/cairo_sembold"
+                        android:padding="10dp"
+                        android:text="@string/please_consult_your_physician_before_putin_tis_medicine"
+                        android:textColor="#777676"
+                        android:textSize="10dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/nameDrag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="@{drugViewModel.drug.drugs_name}"
+                            android:textColor="@color/sky"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/priceDrag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/nameDrag"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:text="@{String.valueOf(drugViewModel.drug.price)+` `+@string/sd}"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_toEndOf="@+id/nameDrag"
+                            android:gravity="end">
+
+                            <ImageView
+                                android:id="@+id/cart_minus_img_drug"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_minus"
+                                android:backgroundTint="@color/purple_700" />
+
+                            <TextView
+                                android:id="@+id/cart_drug_quantity_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/cairo_sembold"
+                                android:paddingEnd="10dp"
+                                android:paddingStart="10dp"
+                                android:text="@{String.valueOf(1)}"
+                                android:textSize="12dip"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/cart_plus_img_drug"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_plus_sign"
+                                android:backgroundTint="@color/purple_700" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:alpha="0.3"
+                        android:background="@color/black" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/infoManufacturer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="@string/manufacturer"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:id="@+id/imManufacturer"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/infoManufacturer"
+                            android:companyImage="@{drugViewModel.drug.company_logo}"
+                            android:src="@drawable/logo2" />
+
+                        <TextView
+                            android:id="@+id/nameManufacturer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/imManufacturer"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:text="@{drugViewModel.drug.company_name}"
+                            android:textColor="#F43333"
+                            android:textSize="14dp"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/infoDosage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/nameManufacturer"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/dose_from"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:padding="5dp"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/nameDosage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/imManufacturer"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/infoDosage"
+                            android:background="@drawable/badge_shape"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:padding="5dp"
+                            android:text="@{drugViewModel.drug.Pharmaceuticalform_name}"
+                            android:textColor="@color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/detialDrag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/infoDosage"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:text="@{drugViewModel.drug.description}"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relIndication"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#ECEBEB"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/im1"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:src="@drawable/ic_medication" />
+
+                                <TextView
+                                    android:id="@+id/idUse"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/im1"
+                                    android:fontFamily="@font/cairo_sembold"
+                                    android:text="@string/indication_usage"
+                                    android:textColor="#504F4F"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/immg1"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/textSecondary"
+                                    android:background="@drawable/ic_baseline_arrow_forward_ios_24" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relSideEffect"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#ECEBEB"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/im2"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:src="@drawable/ic_hand" />
+
+                                <TextView
+                                    android:id="@+id/idSideEffect"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/im2"
+                                    android:fontFamily="@font/cairo_sembold"
+                                    android:text="@string/side_effect"
+                                    android:textColor="#504F4F"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/immg2"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/textSecondary"
+                                    android:background="@drawable/ic_baseline_arrow_forward_ios_24" />" /></RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relDose"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#ECEBEB"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/im4"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:background="@drawable/ic_drugs"
+                                    android:backgroundTint="@color/textSecondary"/>
+
+                                <TextView
+                                    android:id="@+id/idDose"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/im4"
+                                    android:fontFamily="@font/cairo_sembold"
+                                    android:text="@string/dose"
+                                    android:textColor="#504F4F"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/immg3"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/textSecondary"
+                                    android:background="@drawable/ic_baseline_arrow_forward_ios_24" /> />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relActiveIngredient"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#ECEBEB"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/im5"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:src="@drawable/ic_add_p" />
+
+                                <TextView
+                                    android:id="@+id/idActiveIngredient"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/im5"
+                                    android:fontFamily="@font/cairo_sembold"
+                                    android:text="@string/active_ingredient"
+                                    android:textColor="#504F4F"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/immg4"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/textSecondary"
+                                    android:background="@drawable/ic_baseline_arrow_forward_ios_24"/>
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relInteractions"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="388dp"
+                                android:layout_height="match_parent"
+                                android:background="#ECEBEB"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/im6"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:src="@drawable/ic_chemical_reaction" />
+
+                                <TextView
+                                    android:id="@+id/idInteractions"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/im6"
+                                    android:fontFamily="@font/cairo_sembold"
+                                    android:text="@string/interactions"
+                                    android:textColor="#504F4F"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/immg5"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/textSecondary"
+                                    android:background="@drawable/ic_baseline_arrow_forward_ios_24" />                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeOperation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/ray"
+                    android:drawableStart="@drawable/ic_baseline_shopping_cart_24"
+                    android:fontFamily="@font/cairo_bold"
+                    android:padding="12dp"
+                    android:text="@string/add_to_cart"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/buy"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_checked"
+                    android:fontFamily="@font/cairo_bold"
+                    android:padding="12dp"
+                    android:text="@string/buy_now"
+                    android:textColor="@color/colorWhite"
+                    app:backgroundTint="@color/colorPrimary" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

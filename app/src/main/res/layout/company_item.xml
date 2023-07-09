@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="company"
+            type="com.example.discaount.data.model.Companies" />
+
+        <variable
+            name="companyInterface"
+            type="com.example.discaount.adapters.CompanyAdapter.CompanyInterface" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:onClick="@{()->companyInterface.onItemClick(company)}"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/drugName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo_sembold"
+            android:text="@{company.name}"
+            android:textColor="@color/textSecondary"
+            android:textSize="14dp"
+            android:layout_marginStart="40dp"
+           android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/addToCartButton"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/addToCartButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:CompanyImage="@{company.logo}"
+            android:src="@drawable/icon_blister"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+        <!--    <ImageView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:gravity="right"-->
+        <!--        android:background="@drawable/ic_baseline_arrow_back_ios_24"-->
+        <!--        android:backgroundTint="#00BCD4"-->
+        <!--        android:visibility="visible" />-->
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:alpha=".4"
+        android:background="@color/textSecondary"/>
+</LinearLayout>
+</layout>

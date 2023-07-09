@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--                <RelativeLayout-->
+                <!--                    android:layout_margin="5dp"-->
+                <!--                    android:id="@+id/edt_ivSearchFragment"-->
+                <!--                    android:layout_width="250dp"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:background="@drawable/round_search">-->
+
+                <!--                    <RelativeLayout-->
+                <!--                        android:id="@+id/imgSearch"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="40dp"-->
+                <!--                        android:layout_centerVertical="true"-->
+                <!--                        android:backgroundTint="@color/purple_700"-->
+                <!--                        android:background="@drawable/round_search">-->
+
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="match_parent"-->
+                <!--                            android:layout_centerInParent="true"-->
+                <!--                            android:layout_centerHorizontal="true"-->
+                <!--                            android:layout_marginStart="15dp"-->
+                <!--                            android:src="@drawable/ic_baseline_search_24" />-->
+
+                <!--                    </RelativeLayout>-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_centerVertical="true"-->
+                <!--                        android:layout_marginStart="15dp"-->
+                <!--                        android:layout_toEndOf="@+id/imgSearch"-->
+                <!--                        android:enabled="false"-->
+                <!--                        android:fontFamily="@font/cairo_sembold"-->
+                <!--                        android:padding="5dp"-->
+                <!--                        android:layout_centerInParent="true"-->
+                <!--                        android:layout_centerHorizontal="true"-->
+                <!--                        android:text="@string/searches"-->
+                <!--                        android:textColor="@color/textSecondary" />-->
+                <!--                </RelativeLayout>-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/banner_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="center"
+                    android:background="@drawable/defult_image"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints" />
+
+                    <LinearLayout
+                        android:id="@+id/lay_indicator"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="15dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/banner_view_pager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintVertical_bias="0.43">
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/cameraShow"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/sky"
+                        android:drawableEnd="@drawable/ic_baseline_photo_camera_24"
+                        android:padding="10dp"
+                        android:text="@string/add_Rx"
+                        android:textColor="@color/colorWhite"
+                        app:fontFamily="@font/cairo_sembold" />
+                    <!--                   <Button-->
+                    <!--                       android:layout_width="177dp"-->
+                    <!--                       android:layout_height="50dp"-->
+                    <!--                       android:layout_margin="5dp"-->
+                    <!--                       android:textColor="@color/colorWhite"-->
+                    <!--                       android:background="@color/orange"-->
+                    <!--                       android:text="@string/find_generic">-->
+
+                    <!--                   </Button>-->
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/reminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableEnd="@drawable/ic_baseline_alarm_add_24"
+                    android:padding="10dp"
+                    android:text="@string/dos_reminder"
+                    android:textColor="@color/colorWhite"
+                    app:fontFamily="@font/cairo_sembold" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/mdicine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/medicine_category_name"
+                        android:textColor="@color/new_color"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/cairo_bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/textSecondary"
+                        android:text="@string/more"
+                        android:textSize="12dp"
+                        app:fontFamily="@font/cairo_bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.905"
+                        app:layout_constraintStart_toEndOf="@+id/mdicine" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/medicineRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/card_sub_row" />
+
+                <LinearLayout
+                    android:id="@+id/offerCheck"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/offerHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/offers"
+                        android:textColor="@color/new_color"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/cairo_bold" />
+                    <LinearLayout
+                        android:id="@+id/offer"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp">
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:clickable="true"
+                            android:id="@+id/banner_view_pager_offer"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/category_name"
+                    android:textColor="@color/new_color"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/cairo_bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categoryRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    tools:listitem="@layout/category_item" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

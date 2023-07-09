@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.discaount.views.ProductFragment"
+
+        tools:layout="@layout/fragment_product">
+        <action
+            android:id="@+id/action_shopFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shopFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.discaount.views.ProductDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_product_detail" />
+    <action
+        android:id="@+id/action_productDetailFragment_to_cartFragment"
+        app:destination="@id/cartFragment" />
+    <action
+        android:id="@+id/attion"
+        app:destination="@id/cartFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.discaount.views.CartFragment"
+        android:label=""
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_orderFragment"
+            app:destination="@id/orderFragment"
+            app:popUpTo="@id/shopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.discaount.views.OrderFragment"
+        android:label=""
+        tools:layout="@layout/fragment_order">
+        <action
+            android:id="@+id/action_orderFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_show_dialog_fragment"
+            app:destination="@id/show_dialog_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.discaount.views.HomeFragment"
+        android:label=""
+        app:launchSingleTop="true"
+        app:popUpToInclusive="true">
+        <action
+            android:id="@+id/action_homeFragment_to_subCategoryFragment2"
+            app:destination="@id/subCategoryFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_drugFragment"
+            app:destination="@id/drugFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_offerFragment"
+            app:destination="@id/offerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_MCategoriesFragment"
+            app:destination="@id/MCategoriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicineFragment"
+        android:name="com.example.discaount.views.MedicineCategoryFragment"
+        android:label=""
+        tools:layout="@layout/medicine_fragment">
+        <action
+            android:id="@+id/action_medicineFragment_to_drugFragment"
+            app:destination="@id/drugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subCategoryFragment2"
+        android:name="com.example.discaount.views.SubCategoryFragment"
+
+        tools:layout="@layout/fragment_sub_category">
+
+        <action
+            android:id="@+id/action_subCategoryFragment2_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/drugFragment"
+        android:name="com.example.discaount.views.DrugFragment"
+        tools:layout="@layout/drug_fragment">
+        <action
+            android:id="@+id/action_drugFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_drugFragment_to_drugDetailsFragment"
+            app:destination="@id/drugDetailsFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/offerFragment"
+        android:name="com.example.discaount.views.OfferFragment"
+
+        tools:layout="@layout/offer_fragment">
+        <action
+            android:id="@+id/action_offerFragment_to_offerDetailsFragment"
+            app:destination="@id/offerDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/drugDetailsFragment"
+        android:name="com.example.discaount.views.DrugDetailsFragment"
+
+        tools:layout="@layout/drug_details_fragment">
+        <action
+            android:id="@+id/action_drugDetailsFragment_to_instanceFragment"
+            app:destination="@id/instanceFragment" />
+        <action
+            android:id="@+id/action_drugDetailsFragment_to_textFragment"
+            app:destination="@id/textFragment" />
+        <action
+            android:id="@+id/action_drugDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/MCategoriesFragment"
+        android:name="com.example.discaount.views.more.MCategoriesFragment">
+        <action
+            android:id="@+id/action_MCategoriesFragment_to_companyMedicineFragment"
+            app:destination="@id/companyMedicineFragment" />
+        <action
+            android:id="@+id/action_MCategoriesFragment_to_companuDrugFragment"
+            app:destination="@id/companuDrugFragment" />
+        <action
+            android:id="@+id/action_MCategoriesFragment_to_drugFragment"
+            app:destination="@id/drugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manufatouresFragment"
+        android:name="com.example.discaount.views.more.ManufatouresFragment"
+        tools:layout="@layout/manufatoures_fragment">
+        <action
+            android:id="@+id/action_manufatouresFragment_to_drugFragment"
+            app:destination="@id/drugFragment"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/medicineFragment2"
+        android:name="com.example.discaount.views.more.MedicineFragment">
+        <action
+            android:id="@+id/action_medicineFragment2_to_drugFragment"
+            app:destination="@id/drugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/offerDetailsFragment"
+        android:name="com.example.discaount.views.activity.OfferDetailsFragment">
+        <action
+            android:id="@+id/action_offerDetailsFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instanceFragment"
+        android:name="com.example.discaount.views.InstanceFragment">
+        <action
+            android:id="@+id/action_instanceFragment_to_drugDetailsFragment"
+            app:destination="@id/drugDetailsFragment" />
+        <action
+            android:id="@+id/action_instanceFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="com.example.discaount.views.TextFragment"
+        tools:layout="@layout/fragment_text" />
+    <fragment
+        android:id="@+id/companyMedicineFragment"
+        android:name="com.example.discaount.views.CompanyMedicineFragment"
+        android:label="CompanyMedicineFragment">
+        <action
+            android:id="@+id/action_companyMedicineFragment_to_drugDetailsFragment"
+            app:destination="@id/drugDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.discaount.views.SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_drugDetailsFragment"
+            app:destination="@id/drugDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companuDrugFragment"
+        android:name="com.example.discaount.views.CompanuDrugFragment"
+        android:label="CompanuDrugFragment">
+        <action
+            android:id="@+id/action_companuDrugFragment_to_drugDetailsFragment"
+            app:destination="@id/drugDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/show_dialog_fragment"
+        android:name="com.example.discaount.utils.FragmentDialog"
+        tools:layout="@layout/layout_show_dialog"
+        android:label="FragmentDialog">
+        <action
+            android:id="@+id/action_show_dialog_fragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+
+</navigation>

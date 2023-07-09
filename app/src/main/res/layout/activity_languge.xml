@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="@color/background"
+    tools:context=".LangugeActivity">
+    <RelativeLayout
+        android:id="@+id/relTool"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/purple_700">
+
+        <ImageView
+            android:id="@+id/imgFl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:backgroundTint="@color/white"
+            android:rotation="180" />
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/imgFl"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo_sembold"
+            android:text="@string/language"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:padding="15dp"
+        android:layout_below="@+id/relTool"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+       <RelativeLayout
+           android:id="@+id/relEn"
+           android:background="@color/white"
+           android:padding="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/imageFlagUs"
+               android:layout_width="25dp"
+               android:layout_height="25dp"
+               android:src="@drawable/flag_united_kingdom"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_centerVertical="true"
+               android:layout_toEndOf="@+id/imageFlagUs"
+               android:layout_marginStart="10dp"
+               android:fontFamily="@font/cairo_bold"
+               android:textSize="14dp"
+               android:text="@string/english"
+               />
+       </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/relAr"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageFlagSD"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/flag_sudan"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imageFlagSD"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/cairo_bold"
+                android:textSize="14dp"
+                android:text="@string/arabic"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

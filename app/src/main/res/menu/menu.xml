@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="@string/home"
+            android:icon="@drawable/ic_send"
+            android:id="@+id/search"
+            />
+        <item
+            android:title="@string/alarm"
+            android:icon="@drawable/ic_capsule"
+            android:id="@+id/basket"
+            />
+<!--        <item-->
+<!--            android:title="@string/offers"-->
+<!--            android:icon="@drawable/ic_discount2"-->
+<!--            android:id="@+id/favorite"-->
+<!--            />-->
+        <item
+            android:title="@string/condition"
+            android:icon="@drawable/ic_terms_and_conditions"
+            android:id="@+id/promo_code"
+            />
+        <item
+            android:title="@string/privacy"
+            android:icon="@drawable/ic_padlock"
+            android:id="@+id/orders"
+            />
+    </group>
+    <item android:title="ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:title="@string/setting"
+                    android:icon="@drawable/ic_settings"
+                    android:id="@+id/setting"
+                    />
+                <item
+                    android:title="@string/help"
+                    android:icon="@drawable/ic_information"
+                    android:id="@+id/support"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>

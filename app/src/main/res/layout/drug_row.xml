@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="drug"
+            type="com.example.discaount.data.model.Drug" />
+
+        <variable
+            name="drugInterface"
+            type="com.example.discaount.adapters.DrugListAdapter.DrugInterface" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:onClick="@{() -> drugInterface.onItemClick(drug)}"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/drugName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@{drug.drugs_name}"
+                android:textColor="@color/color_light_grey"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_toStartOf="@+id/addToCartButton"
+                android:id="@+id/drugPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@{String.valueOf(drug.price) +` `+@string/sd + ` `}"
+                android:textColor="@color/color_light_grey"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/addToCartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_baseline_shopping_cart_24"
+                android:backgroundTint="@color/purple_700"
+                android:onClick="@{() -> drugInterface.addItem(drug)}" />
+            <TextView
+                android:id="@+id/statusDrug"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addToCartButton"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/round"
+                android:backgroundTint="@color/sky"
+                android:fontFamily="@font/cairo_sembold"
+                android:padding="5dp"
+                android:text="نواقص"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="0dp"
+            android:alpha=".4"
+            android:background="@color/textSecondary"/>
+    </LinearLayout>
+</layout>

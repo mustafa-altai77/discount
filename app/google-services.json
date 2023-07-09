@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258710461020",
+    "project_id": "discount-15f8b",
+    "storage_bucket": "discount-15f8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258710461020:android:680805d97ddc4467f6e499",
+        "android_client_info": {
+          "package_name": "com.primaryKey.discaount"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258710461020-6cleo6e5s8a6o8tn0912kooqq65glh78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTmgZOuMS8YrkjRNQwlm2-U9nXaoLqD80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258710461020-6cleo6e5s8a6o8tn0912kooqq65glh78.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

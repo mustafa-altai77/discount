@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.example.discaount.data.model.Product" />
+
+        <variable
+            name="shopInterface"
+            type="com.example.discaount.adapters.ShopListAdapter.ShopInterface" />
+        <!--        <variable-->
+        <!--            name="shopViewModel"-->
+        <!--            type="com.example.discaount.viewmodels.ShopViewModel" />-->
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/cardview_light_background"
+        android:onClick="@{() -> shopInterface.onItemClick(product)}"
+        android:orientation="vertical"
+        card_view:cardCornerRadius="7dp"
+        card_view:cardElevation="4dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:contentPadding="0dp">
+
+        <RelativeLayout
+            android:id="@+id/infoSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/productImageView"
+            android:orientation="vertical"
+            android:padding="0dp">
+
+            <ImageView
+                android:id="@+id/productImageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:productImage="@{product.imageUrl}"
+                app:srcCompat="@drawable/icon_blister" />
+
+            <TextView
+                android:id="@+id/productDesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/productImageView"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@{product.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/textSecondary" />
+
+            <TextView
+                android:id="@+id/productNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productDesTextView"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/productImageView"
+                android:fontFamily="@font/cairo_sembold"
+                android:textSize="12dp"
+                android:maxLines="1"
+                android:maxLength="35"
+                android:text="@{product.description}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/textSecondary" />
+
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productNameTextView"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/productImageView"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@{String.valueOf(product.price)+` `+@string/sd + ` `}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/purple_700" />
+
+            <ImageButton
+                android:id="@+id/addToCartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_baseline_shopping_cart_24"
+                android:backgroundTint="@color/purple_700"
+                android:fontFamily="@font/cairo_sembold"
+                android:onClick="@{() -> shopInterface.addItem(product)}" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

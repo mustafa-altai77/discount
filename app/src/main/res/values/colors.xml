@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#66af01</color>
+
+    <color name="colorPrimaryDark">#579304</color>
+
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="viewBg">#555466AE</color>
+    <color name="sky">#079DE1</color>
+
+    <color name="textSecondary">#757575</color>
+    <color name="trash">#A6A6A6</color>
+    <color name="search">#D3D1D1</color>
+    <color name="colorWhite">#fff</color>
+
+    <color name="color_light_grey">#4d4d4d</color>
+
+    <color name="purple_700">#66af01</color>
+    <color name="black">#FF000000</color>
+    <color name="ray">#5E5E5E</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="tost_color_error">#990000</color>
+    <color name="background">#EAEAEA</color>
+    <color name="address">#2F7092</color>
+    <color name="solidCircle">#AAFFFFFF</color>
+    <color name="gradEnd">#7CCD0B</color>
+    <color name="gradStart">#66af01</color>
+    <color name="grey">#E5E5E5</color>
+    <color name="new_color">#424141</color>
+</resources>

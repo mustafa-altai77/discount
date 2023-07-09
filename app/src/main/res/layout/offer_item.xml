@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+<data>
+
+        <variable
+            name="offer"
+            type="com.example.discaount.data.model.Offer" />
+
+        <variable
+            name="shopInterface"
+            type="com.example.discaount.adapters.OfferAdapter.OfferInterface" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="4dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:contentPadding="0dp"
+        android:layout_margin="8dp"
+        android:background="@color/cardview_light_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:onClick="@{() -> shopInterface.onItemClick(offer)}"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/productImageView"
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:scaleType="fitXY"
+                android:productImage="@{offer.product.imageUrl}"
+                app:srcCompat="@drawable/icon_blister" />
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_toEndOf="@+id/productImageView"
+                android:fontFamily="@font/cairo_bold"
+                android:lineSpacingExtra="0dp"
+                android:lineSpacingMultiplier=".8"
+                android:maxLines="2"
+                android:text="@{offer.product.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/textSecondary"
+                android:textSize="14dp" />
+            <TextView
+                android:layout_marginStart="10dp"
+                android:id="@+id/productNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@+id/productName"
+                android:layout_toEndOf="@+id/productImageView"
+                android:fontFamily="@font/cairo_sembold"
+                android:lineSpacingExtra="0dp"
+                android:lineSpacingMultiplier=".8"
+                android:maxLines="2"
+                android:text="@{offer.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/textSecondary"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/expDate"
+                android:fontFamily="@font/cairo_sembold"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:layout_below="@+id/priceTextView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:text="@{@string/expires+` `+offer.endDate}"
+                android:textColor="@color/colorAccent"
+                android:textSize="14dp" />
+            <!--           />-->
+            <ImageView
+                android:layout_marginStart="10dp"
+                android:id="@+id/imgDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productNameTextView"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/productImageView"
+                android:src="@drawable/ic_discount" />
+
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productNameTextView"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/imgDiscount"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@{String.valueOf(offer.price)+` `+@string/sd}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/priceTextViewRe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productNameTextView"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/cairo_sembold"
+                android:foreground="@drawable/striketherhrough"
+                android:text="@{String.valueOf(offer.product.price)+` `+@string/sd}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="14dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

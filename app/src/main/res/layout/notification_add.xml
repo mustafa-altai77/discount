@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/nameDragNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageAdd"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="@string/product_successfully_added"
+        android:textColor="@color/textSecondary"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:id="@+id/imageDrugNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameDragNotification"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_baseline_shopping_cart_24"
+        android:backgroundTint="@color/purple_700" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameDragNotification"
+        android:layout_toEndOf="@+id/imageDrugNotification"
+        android:fontFamily="@font/cairo_bold"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="@string/_1_product_were_added_to_your_cart"
+        android:textColor="@color/purple_700"
+        android:textSize="12dp" />
+</RelativeLayout>

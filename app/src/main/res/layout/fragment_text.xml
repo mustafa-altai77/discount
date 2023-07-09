@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".views.DrugDetailsFragment">
+
+    <data>
+        <variable
+            name="drugViewModel"
+            type="com.example.discaount.viewmodels.DrugViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textFt"
+            android:layout_width="wrap_content"
+            android:justificationMode="inter_word"
+            android:textAlignment="textStart"
+            android:textColor="@color/textSecondary"
+            android:lineSpacingExtra="2.5dp"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </RelativeLayout>
+</layout>

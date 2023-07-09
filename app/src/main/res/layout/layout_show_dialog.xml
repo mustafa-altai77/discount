@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/show_dialog_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:layoutDirection="rtl"
+        android:padding="20dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_background"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/cairo_bold"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/operation_completed"
+                android:textColor="@color/textSecondary"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
+
+            <!--        <ImageView-->
+            <!--            android:id="@+id/imageIcon"-->
+            <!--            android:layout_width="25dp"-->
+            <!--            android:layout_height="25dp"-->
+            <!--            android:layout_marginEnd="10dp"-->
+            <!--            android:contentDescription="@string/app_name"-->
+            <!--            android:tint="@color/white"-->
+            <!--            android:backgroundTint="@color/green"-->
+            <!--            app:layout_constraintBottom_toBottomOf="@id/textTitle"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintTop_toTopOf="@id/textTitle" />-->
+
+            <ImageView
+                android:id="@+id/imageMessage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@id/layoutDialog"
+                app:layout_constraintLeft_toLeftOf="@id/layoutDialog"
+                app:layout_constraintRight_toRightOf="@id/layoutDialog"
+                app:layout_constraintTop_toTopOf="@id/layoutDialog"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="115dp" />
+
+            <TextView
+                android:id="@+id/textMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="@font/cairo_sembold"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.5"
+                android:text="@string/you_will_be_contacted"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageMessage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/buttonAction"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/button_error_background"
+            android:fontFamily="@font/cairo_bold"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            app:layout_constraintBottom_toBottomOf="@id/layoutDialog"
+            app:layout_constraintTop_toBottomOf="@id/layoutDialog" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

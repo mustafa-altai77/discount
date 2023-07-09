@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="offerViewModel"
+            type="com.example.discaount.viewmodels.OfferViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/offer_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/sendOrder"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/productImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:productImage="@{offerViewModel.offer.product.imageUrl}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_drugs" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/cairo_sembold"
+                    android:text="@{@string/expires+` `+offerViewModel.offer.endDate}"
+                    android:textSize="14dp"
+                    android:textColor="@color/colorAccent" />
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@{offerViewModel.offer.product.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/sky" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/productNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@{offerViewModel.offer.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/priceTextViewRe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@+id/imgDiscount"
+                    android:fontFamily="@font/cairo_sembold"
+                    android:text="@{String.valueOf(offerViewModel.offer.price)+` `+@string/sd}"
+                    android:textColor="@color/purple_700" />
+                <!--                android:text="@{String.valueOf(shopViewModel.product.price) + `$` }"-->
+                <ImageView
+                    android:id="@+id/imgDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_discount" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/priceTextViewOld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceTextView"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/cairo_sembold"
+                android:foreground="@drawable/striketherhrough"
+                android:text="@{String.valueOf(offerViewModel.offer.product.price)+` `+@string/sd}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textColor="@color/textSecondary" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/minus"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_minus" />
+
+                        <TextView
+                            android:id="@+id/amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/minus"
+                            android:fontFamily="@font/cairo_sembold"
+                            android:paddingStart="10dp"
+                            android:paddingRight="10dp"
+                            android:text="1"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/plus"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/amount"
+                            android:src="@drawable/ic_plus_sign" />
+
+                    </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:alpha="0.5"
+                android:background="@color/textSecondary" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_sembold"
+                android:textColor="@color/textSecondary"
+                android:text="@{offerViewModel.offer.description}"
+                android:textSize="14dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <Button
+            android:layout_alignParentBottom="true"
+            android:id="@+id/sendOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple_700"
+            android:drawableStart="@drawable/ic_checked"
+            android:fontFamily="@font/cairo_bold"
+            android:padding="12dp"
+            android:text="@string/order_now"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </RelativeLayout>
+</layout>
+

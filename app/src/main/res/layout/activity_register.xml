@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.activity.RegisterActivity">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <ProgressBar
+           android:id="@+id/progressBar"
+           style="?android:attr/progressBarStyle"
+           android:theme="@style/progressBarBlue"
+           android:layout_width="100dp"
+           android:layout_height="100dp"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:layout_marginTop="200dp"
+           android:visibility="gone"
+           android:layout_centerHorizontal="true"
+           android:background="@color/common_google_signin_btn_text_light_default"
+           android:progressDrawable="@color/colorPrimary"
+           android:soundEffectsEnabled="true" />
+
+    <ScrollView
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp"
+            tools:context=".v.auth.fragments.SignUpFragment">
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/viewBg"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lay_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+
+                tools:ignore="MissingConstraints,UnknownId">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:hint="@string/full_name"
+                    android:inputType="text"
+                    android:fontFamily="@font/cairo_sembold"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/organ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/lay_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/lay_name"
+                app:layout_constraintTop_toBottomOf="@+id/lay_name"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/spDialcode"
+                    android:id="@+id/phone"
+                    android:hint="9*******"
+                    android:padding="10dp"
+                    android:maxLength="9"
+                    android:inputType="number"
+                    android:fontFamily="@font/cairo_sembold"
+                    android:layout_marginTop="24dp"/>
+                <com.hbb20.CountryCodePicker
+                    android:layout_marginTop="24dp"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/spDialcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    app:ccpDialog_showNameCode="false"
+                    app:ccpDialog_showTitle="false"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_defaultPhoneCode="249"
+                    app:ccp_showNameCode="false"/>
+            </RelativeLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/lay_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/organ"
+                app:layout_constraintTop_toBottomOf="@+id/organ"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/conferm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/cairo_sembold"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titl_age"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/lay_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/password"
+                app:layout_constraintTop_toBottomOf="@+id/password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ageEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/age"
+                    android:inputType="number"
+                    android:fontFamily="@font/cairo_sembold"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/lay_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/titl_age"
+                app:layout_constraintTop_toBottomOf="@+id/titl_age"
+                app:counterEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/adress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/state_city_street"
+                    android:inputType="text"
+                    android:fontFamily="@font/cairo_sembold"
+                   />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:layout_marginTop="20dp"
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:checked="false"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@string/by_clicking_on_this_option_you_agree_to_our_privacy_and_policy"
+                app:layout_constraintEnd_toEndOf="@+id/lay_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/address"
+                app:layout_constraintTop_toBottomOf="@+id/address" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/btn_background"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@string/sign_up"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/address"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/address"
+                app:layout_constraintTop_toBottomOf="@+id/address" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/or"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/viewBg"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.45" />
+
+            <RelativeLayout
+                android:id="@+id/cvGoogle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="4dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/guideline10"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.53" />
+
+            <RelativeLayout
+                android:id="@+id/cvFacebook"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvGoogle"
+                app:layout_constraintEnd_toEndOf="@+id/guideline8"
+                app:layout_constraintStart_toEndOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/cvGoogle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivCopy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline11"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.3" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/tvTitle"-->
+                    <!--                        android:layout_width="121dp"-->
+                    <!--                        android:layout_height="23dp"-->
+                    <!--                        android:layout_marginEnd="24dp"-->
+                    <!--                        android:text="@string/forget_password"-->
+                    <!--                        android:textColor="@android:color/black"-->
+                    <!--                        android:textSize="15sp"-->
+                    <!--                        app:layout_constraintBottom_toBottomOf="@+id/ivCopy"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintTop_toTopOf="@+id/ivCopy"-->
+                    <!--                        app:layout_constraintVertical_bias="0.0" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="25dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.48" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="24dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.52" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@string/have_account"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvFacebook" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="200dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.63" />
+
+            <TextView
+                android:id="@+id/tvSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:fontFamily="@font/cairo_sembold"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="213dp"
+                tools:layout_editor_absoluteY="569dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.30" />
+
+                <ImageView
+                    android:id="@+id/ivMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline12"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/textView3"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginEnd="40dp"-->
+                <!--                        android:text="@string/register_now"-->
+                <!--                        android:textColor="@android:color/black"-->
+                <!--                        android:textSize="15sp"-->
+                <!--                        app:layout_constraintBottom_toBottomOf="@+id/ivMessage"-->
+                <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                        app:layout_constraintTop_toTopOf="@+id/ivMessage"-->
+                <!--                        app:layout_constraintVertical_bias="0.45" />-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+   </RelativeLayout>
+
+</layout>

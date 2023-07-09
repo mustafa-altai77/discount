@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="subCategory"
+            type="com.example.discaount.data.model.SubCategory" />
+
+        <variable
+            name="subCategoryInterface"
+            type="com.example.discaount.adapters.SubCategoryAdapter.SubCategoryInterface" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:layoutDirection="rtl">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> subCategoryInterface.onItemClick(subCategory)}"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/subCategoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_sembold"
+                android:text="@{subCategory.name}"
+                android:textColor="@color/textSecondary"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/immg1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:backgroundTint="@color/textSecondary"
+                android:rotation="180" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

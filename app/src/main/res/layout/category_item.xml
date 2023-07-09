@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="category"
+            type="com.example.discaount.data.model.Categories"/>
+        <variable
+            name="categoryInterface"
+            type="com.example.discaount.adapters.CategoryAdapter.CategoryInterface" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="7dp"
+        card_view:cardElevation="4dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:contentPadding="0dp"
+        android:onClick="@{() -> categoryInterface.onItemClick(category)}"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"  >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/categoryImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="41dp"
+                android:categoryIcon="@{category.imageUrl}"
+                android:src="@drawable/icon_blister" />
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:id="@+id/TitleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_gravity="start"
+                android:background="@drawable/roundre"
+                android:gravity="center"
+                android:fontFamily="@font/cairo_sembold"
+                android:lineSpacingExtra="0dp"
+                android:lineSpacingMultiplier=".8"
+                android:maxLines="2"
+                android:text="@{` `+category.name}"
+                android:textColor="@color/white"
+                android:layout_marginEnd="0dp"
+                android:textSize="12dp"
+
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

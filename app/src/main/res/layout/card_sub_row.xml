@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="medicine"
+            type="com.example.discaount.data.model.Medicine"/>
+        <variable
+            name="medicineInterface"
+            type="com.example.discaount.adapters.MedicineAdapter.MedicineInterface" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/medicine_card"
+        android:divider="@null"
+        android:layout_width="150dp"
+        card_view:cardCornerRadius="7dp"
+        card_view:cardElevation="4dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:contentPadding="0dp"
+        android:layout_margin="5dp"
+        android:layout_height="150dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/medicineImageView"
+                android:layout_width="match_parent"
+                android:layout_height="109dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="41dp"
+                android:medicineImage="@{medicine.imageUrl}"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_blister" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/roundre">
+                <TextView
+                    android:id="@+id/txtTitleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/cairo_sembold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier=".8"
+                    android:maxLines="2"
+                    android:text="@{` `+medicine.name}"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    tools:ignore="RtlCompat" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
